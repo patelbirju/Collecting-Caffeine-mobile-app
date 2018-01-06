@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Collecting Caffeine</string>
+
+    <string name="username_login">Username</string>
+    <string name="password_login">Password</string>
+    <string name="first_name">Enter your First Name</string>
+    <string name="last_name">Enter your Last Name</string>
+    <string name="email">Enter an Email address</string>
+    <string name="password">Create a Password</string>
+    <string name="username">Create a Username</string>
+
+    <string name="set_budget">Set My Budget</string>
+    <string name="bought_coffee">I bought a Coffee</string>
+    <string name="settings">Settings</string>
+    <string name="statistics">Statistics</string>
+    
+
+    <string name="coffee">Coffee Logo</string>
+</resources>
