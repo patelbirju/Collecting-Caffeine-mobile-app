@@ -10,10 +10,12 @@
     <string name="username">Create a Username</string>
 
     <string name="set_budget">Set My Budget</string>
+    <string name="save_budget">Save My Budget</string>
     <string name="bought_coffee">I bought a Coffee</string>
     <string name="settings">Settings</string>
     <string name="statistics">Statistics</string>
-    
+
+    <string name="save">SAVE</string>
 
     <string name="coffee">Coffee Logo</string>
 </resources>

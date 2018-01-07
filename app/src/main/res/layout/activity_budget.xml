@@ -86,15 +86,15 @@
         android:layout_alignRight="@+id/spending_text"
         android:layout_alignStart="@+id/spending_text"
         android:layout_alignTop="@+id/coffee_consumption_text"
-        android:layout_above="@+id/button2" />
+        android:layout_above="@+id/save_budget_btn" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/save_budget_btn"
         android:layout_width="195dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/coffee_consumption_text"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="112dp"
-        android:text="@string/set_budget" />
+        android:text="@string/save_budget" />
 
 </RelativeLayout>
