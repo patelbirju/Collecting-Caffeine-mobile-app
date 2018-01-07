@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.birju_000.collectingcaffeine.Login">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:text="Collecting Caffeine"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="Collecting Caffeine"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView11"
+            android:layout_toEndOf="@+id/textView11"
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp" />
+
+        <Button
+            android:id="@+id/sign_in_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/password_login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="75dp"
+            android:text="SIGN IN" />
+
+        <Button
+            android:id="@+id/sign_up_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/sign_in_btn"
+            android:layout_alignLeft="@+id/sign_in_btn"
+            android:layout_alignRight="@+id/sign_in_btn"
+            android:layout_alignStart="@+id/sign_in_btn"
+            android:layout_below="@+id/sign_in_btn"
+            android:layout_marginTop="15dp"
+            android:text="JOIN US" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="53dp"
+            android:layout_marginStart="53dp"
+            android:layout_marginTop="25dp"
+            android:text="@string/username_login"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_below="@+id/textView"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/user_name_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_alignBottom="@+id/textView11"
+            android:layout_alignLeft="@+id/textView"
+            android:layout_alignStart="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textView11"
+            android:layout_alignStart="@+id/textView11"
+            android:layout_below="@+id/user_name_login"
+            android:layout_marginTop="39dp"
+            android:text="@string/password_login"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/password_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:layout_alignBottom="@+id/textView12"
+            android:layout_alignLeft="@+id/user_name_login"
+            android:layout_alignStart="@+id/user_name_login" />
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="115dp"
+            android:layout_height="195dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="76dp"
+            android:layout_marginStart="76dp"
+            android:layout_toRightOf="@+id/user_name_login"
+            app:srcCompat="@mipmap/coffeelogo" />
+    </RelativeLayout>
+
+
+</ScrollView>

@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by birju_000 on 06/01/2018.
  */
@@ -56,7 +59,7 @@ public class CollectingCaffeineDB {
 
     //coffeeExpense table constants
     //budget table constants
-    public static  final String COFFEE_EXPENSE_TABLE = "budget";
+    public static  final String COFFEE_EXPENSE_TABLE = "coffee_expense";
 
     public static final String COFFEE_EXPENSE_ID = "_id";
     public static final int COFFEE_EXPENSE_ID_COL = 0;
@@ -217,23 +220,6 @@ public class CollectingCaffeineDB {
         return rowID;
     }
 
-    public CoffeeBudget getBudgets()
-    {
-        String where = null;
-        String[] whereArgs = {null};
-
-        this.openReadableDB();
-        Cursor cursor = db.query(BUDGET_TABLE, null, where, whereArgs, null, null, null);
-        cursor.moveToFirst();
-
-        CoffeeBudget budget = getBudgetsFromCursor(cursor);
-        if(cursor != null){
-            cursor.close();
-        }
-        this.closeDB();
-        return  budget;
-    }
-
 
     private static CoffeeBudget getBudgetsFromCursor(Cursor cursor)
     {
@@ -256,28 +242,33 @@ public class CollectingCaffeineDB {
         }
     }
 
-    public int getBudgetAmount(){
-        int amount = 0;
+    public List<CoffeeBudget> getBudgets(){
+        List<CoffeeBudget> budgets = new ArrayList<>();
 
         String query = "SELECT * FROM " + BUDGET_TABLE;
-        this.openReadableDB();
+        this.openWriteableDB();
         Cursor cursor = db.rawQuery(query, null);
 
-        amount = (cursor.getInt(1));
-        return amount;
+        //looping through all rows
+        if(cursor.moveToFirst()){
+            do{
+                CoffeeBudget cb = new CoffeeBudget();
+                cb.setBudgetId(cursor.getInt(0));
+                cb.setIncome(cursor.getInt(1));
+                cb.setSpendAmount(cursor.getInt(2));
+                cb.setCoffeeAmount(cursor.getInt(3));
+                budgets.add(cb);
+            }while (cursor.moveToNext());
+        }
+        return  budgets;
     }
 
-
-    public int deleteBudget(long id)
+    public void DropBudgetTable()
     {
-        String where = BUDGET_ID + "=?";
-        String[] whereArgs = {String.valueOf(id)};
-
         this.openWriteableDB();
-        int rowCount = db.delete(BUDGET_TABLE, where, whereArgs);
+        db.execSQL(DELETE_BUDGET_TABLE);
+        db.execSQL(CREATE_BUDGET_TABLE);
         this.closeDB();
-
-        return  rowCount;
     }
 
     //COFFEE_EXPENSE_TABLE METHODS
@@ -290,7 +281,7 @@ public class CollectingCaffeineDB {
     }
 
     public double getTotalExpenses(){
-        double total = 0f;
+        double total = 0.0;
         String query = "SELECT * FROM " + COFFEE_EXPENSE_TABLE;
         this.openWriteableDB();
         Cursor cursor = db.rawQuery(query, null);
@@ -302,6 +293,14 @@ public class CollectingCaffeineDB {
             }while (cursor.moveToNext());
         }
         return total;
+    }
+
+    public void DropExpensesTable()
+    {
+        this.openWriteableDB();
+        db.execSQL(DELETE_COFFEE_EXPENSE_TABLE);
+        db.execSQL(CREATE_COFFEE_EXPENSE_TABLE);
+        this.closeDB();
     }
 }
 

@@ -15,9 +15,9 @@ import android.widget.Toast;
 public class Budget extends AppCompatActivity implements View.OnClickListener {
     private Button saveBudgetBtn;
     private int income;
-    private int spendAmount;
+    private Long spendAmount;
     private int coffeeAmount = 0;
-    NumberPicker np;
+    private NumberPicker np;
     private TextView coffeeConsumptionText;
 
     @Override
@@ -50,7 +50,7 @@ public class Budget extends AppCompatActivity implements View.OnClickListener {
         if (view.getId() == R.id.save_budget_btn)
         {
             income = Integer.parseInt(((EditText)findViewById(R.id.monthly_income_text)).getText().toString());
-            spendAmount = Integer.parseInt(((EditText)findViewById(R.id.spending_text)).getText().toString());
+            spendAmount = Long.parseLong(((EditText)findViewById(R.id.spending_text)).getText().toString());
 
             try {
                 ContentValues values = new ContentValues();

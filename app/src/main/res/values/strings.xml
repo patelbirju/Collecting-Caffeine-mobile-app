@@ -16,6 +16,8 @@
     <string name="statistics">Statistics</string>
 
     <string name="save">SAVE</string>
+    <string name="clear_expenses">CLEAR EXPENSES</string>
+    <string name="clear_budgets">CLEAR BUDGETS</string>
 
     <string name="coffee">Coffee Logo</string>
 </resources>

@@ -11,6 +11,8 @@ public class CoffeeBudget {
     private int spendAmount;
     private int coffeeAmount;
 
+    public  CoffeeBudget(){}
+
     public CoffeeBudget(int budgetId, int income, int spendAmount, int coffeeAmount) {
         this.budgetId = budgetId;
         this.income = income;
